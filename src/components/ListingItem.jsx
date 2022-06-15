@@ -20,7 +20,8 @@ function ListingItem({ listing, id, onEdit, onDelete }) {
           <p className='categoryListingLocation'>{listing.location}</p>
           <p className='categoryListingName'>{listing.name}</p>
           <p className='categoryListingPrice'>
-            ${listing.offer ? listing.discountedPrice : listing.regularPrice}
+            {String('\u20B9')}
+            {listing.offer ? listing.discountedPrice : listing.regularPrice}
             {listing.type === 'rent' && ' / Month'}
           </p>
           <div className='categoryListingInfoDiv'>
