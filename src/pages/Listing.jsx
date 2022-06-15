@@ -89,7 +89,7 @@ function Listing() {
       )}
       <div className='listingDetails'>
         <p className='listingName'>
-          {listing.name} -{' '}
+          {listing.name} - {String('\u20B9')}
           {listing.offer
             ? listing.discountedPrice.toLocaleString('en-IN', {
                 maximumFractionDigits: 0,
