@@ -74,6 +74,8 @@ function CreateListing() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     if (discountedPrice >= regularPrice) {
       setLoading(false);
       toast('Discounted price should be less than regular price.');
@@ -183,7 +185,7 @@ function CreateListing() {
 
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
     setLoading(false);
-    toast.success('Lisitng saved successfully');
+    toast.success('Listing saved successfully');
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
   };
 
